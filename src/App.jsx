@@ -6,6 +6,7 @@ import Cards from './Components/Cards/Cards';
 import Slides from './Components/Slides/Slides';
 import Place from './Components/Place/Place';
 import Form from './Components/Form/Form';
+import Footer from './Components/Footer/Footer';
 const App = () => {
   return (
      <>
@@ -15,6 +16,7 @@ const App = () => {
         <Slides/>
         <Place/>
         <Form/>
+        <Footer/>
      </>
   )
 }
