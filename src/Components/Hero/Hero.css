@@ -85,7 +85,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: #D9A441;
+    background: #0A3D42;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s cubic-bezier(0.65, 0, 0.35, 1);
@@ -93,7 +93,7 @@
 }
 
 .hero__btn:hover {
-    color: #0A3D42;
+    color: #fff;
 }
 
 .hero__btn:hover::before {
