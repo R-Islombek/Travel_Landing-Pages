@@ -1,0 +1,109 @@
+.slides {
+    padding: 100px 0;
+    background-color: #f8fafc;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.slides__title {
+    font-size: 38px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* Kartochkalar setkasi */
+.slides__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Har bir card */
+.slides__item {
+    position: relative;
+    height: 450px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+/* Rasm sozlamalari */
+.slides__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Mishka borganda rasm biroz yaqinlashadi */
+.slides__item:hover .slides__img {
+    transform: scale(1.1);
+}
+
+/* Matn va gradient konteyneri */
+.slides__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 60%, transparent 100%);
+    color: #fff;
+    
+    /* Animatsiya uchun boshlang‘ich holat (yashirin) */
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+/* Mishka borganda matn pastdan sirg'alib chiqib keladi */
+.slides__item:hover .slides__content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.slides__card-title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.slides__card-text {
+    font-size: 15px;
+    color: #e2e8f0;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* --- RESPONSIVE (Mobil va planshetlar uchun) --- */
+
+@media (max-width: 968px) {
+    .slides__list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .slides__list {
+        grid-template-columns: 1fr;
+    }
+    
+    .slides__title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+    
+    .slides__item {
+        height: 380px;
+    }
+}
