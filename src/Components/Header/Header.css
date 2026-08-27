@@ -1,0 +1,116 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(10, 30, 33, 0.45), transparent);
+    transition: background 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease;
+}
+
+.header--scrolled {
+    background: rgba(10, 30, 33, 0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 84px;
+}
+
+.header__logo {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 26px;
+    color: #F7F4EE;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.header__list {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header__link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    display: inline-block;
+    position: relative;
+    font-size: 15px;
+    color: #F7F4EE;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    opacity: 0.92;
+    transition: opacity 0.3s ease;
+}
+
+.header__link:hover {
+    opacity: 1;
+}
+
+.header__link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -8px;
+    border-radius: 5px;
+    left: 0;
+    background-color: #D9A441;
+    transition: width 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.header__link:hover::after {
+    width: 100%;
+}
+
+.bars {
+    display: none;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.bar {
+    width: 30px;
+    height: 2px;
+    background: #F7F4EE;
+    margin: 7px 0;
+    transition: 0.3s ease;
+}
+
+@media(max-width: 768px){
+    .bars { display: block; }
+
+    .header__list {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        flex-direction: column;
+        width: 70%;
+        max-width: 320px;
+        height: 100vh;
+        align-items: center;
+        justify-content: center;
+        gap: 34px;
+        background: rgba(10, 30, 33, 0.97);
+        backdrop-filter: blur(12px);
+        transition: right 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+        z-index: 1000;
+    }
+
+    .header__list.show { right: 0; }
+
+    .header__link { font-size: 18px; }
+
+    .bars.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .bars.active .bar:nth-child(2) { opacity: 0; }
+    .bars.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+}

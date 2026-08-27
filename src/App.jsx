@@ -1,11 +1,13 @@
-import React from 'react'
-
+import React from 'react';
+import "./App.css";
+import Header from './Components/Header/Header';
+import Hero from './Components/Hero/Hero';
 const App = () => {
   return (
-    <div>
-          <h1>App jsx</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, cupiditate!</p>
-    </div>
+     <>
+        <Header/>
+        <Hero/>
+     </>
   )
 }
 
